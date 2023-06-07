@@ -1,0 +1,165 @@
+{
+    "name": "odor == n ?",
+    "children": [
+      {
+        "name": "yes",
+        "children": [
+          {
+            "name": "spore-print-color == r ?",
+            "children": [
+              {
+                "name": "yes",
+                "children": [
+                  {
+                    "name": "p"
+                  }
+                ]
+              },
+              {
+                "name": "no",
+                "children": [
+                  {
+                    "name": "stalk-surface-below-ring == y ?",
+                    "children": [
+                      {
+                        "name": "yes",
+                        "children": [
+                          {
+                            "name": "gill-size == n ?",
+                            "children": [
+                              {
+                                "name": "yes",
+                                "children": [
+                                  {
+                                    "name": "p"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "no",
+                                "children": [
+                                  {
+                                    "name": "e"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "no",
+                        "children": [
+                          {
+                            "name": "cap-surface == g ?",
+                            "children": [
+                              {
+                                "name": "yes",
+                                "children": [
+                                  {
+                                    "name": "p"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "no",
+                                "children": [
+                                  {
+                                    "name": "e"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "no",
+        "children": [
+          {
+            "name": "bruises == f ?",
+            "children": [
+              {
+                "name": "yes",
+                "children": [
+                  {
+                    "name": "p"
+                  }
+                ]
+              },
+              {
+                "name": "no",
+                "children": [
+                  {
+                    "name": "stalk-root == c ?",
+                    "children": [
+                      {
+                        "name": "yes",
+                        "children": [
+                          {
+                            "name": "e"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "no",
+                        "children": [
+                          {
+                            "name": "stalk-root == r ?",
+                            "children": [
+                              {
+                                "name": "yes",
+                                "children": [
+                                  {
+                                    "name": "e"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "no",
+                                "children": [
+                                  {
+                                    "name": "gill-spacing == c ?",
+                                    "children": [
+                                      {
+                                        "name": "yes",
+                                        "children": [
+                                          {
+                                            "name": "p"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "no",
+                                        "children": [
+                                          {
+                                            "name": "e"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
