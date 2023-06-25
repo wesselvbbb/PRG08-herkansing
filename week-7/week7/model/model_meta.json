@@ -1,0 +1,1 @@
+{"inputUnits":[3],"outputUnits":1,"inputs":{"Zipcode":{"dtype":"number","min":3520,"max":3800},"Buildyear":{"dtype":"number","min":1970,"max":2010},"bathrooms":{"dtype":"number","min":1,"max":2}},"outputs":{"retailvalue":{"dtype":"number","min":103000,"max":422000}},"isNormalized":true}
