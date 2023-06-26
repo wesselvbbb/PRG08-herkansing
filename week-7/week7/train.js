@@ -44,7 +44,7 @@ function checkData(data) {
     createChart(chartData, "Zipcode", "Retail Value");
 
     nn.normalizeData();
-    nn.train({ epochs: 32 }, () => console.log("Finished training"));
+    nn.train({ epochs: 11 }, () => console.log("Finished training"));
 }
 
 async function predict() {

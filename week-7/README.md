@@ -1,0 +1,6 @@
+Welke CSV file heb je gebruikt? Is deze geschikt voor regression? Welke waarde ga je voorspellen?: utrecht-houseprices.csv, deze is geschikt voor regression en ik ga de waarde van huizen voorspellen op basis van hun postcode, bouwjaar en aantal badkamers <br>
+Heb je een scatterplot gemaakt van je data? Waarom wel of niet?: Ja, hiermee kan je visueel de relatie zien tussen twee waardes. <br>
+Welke kolommen uit je data heb je gebruikt voor het trainen van je model?: Zipcode, Buildyear, bathrooms <br>
+Hoe heb je de data voorbereid voordat je bent begonnen met trainen?: Ik heb de data gesorteerd en genormaliseerd <br>
+Kon je een neural network trainen? Hoeveel epochs heb je gebruikt? Heb je het aantal epochs aangepast?: Ja ik heb een NN getraind, ik heb 11 epochs gebruikt en dit een paar keer aangepast om te kijken wat dit deed. <br>
+Heb je het model kunnen opslaan en inladen in een nieuwe HTML pagina? Wat is het nut van het opslaan van het model?: Ik heb het model opgeslagen en ingeladen, de gebruiker kan nu een voorspelling doen zonder iets te trainen. Het nut van het opslaan van het model is zodat je niet telkens opnieuw hoeft te trainen.

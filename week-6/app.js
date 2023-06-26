@@ -5,6 +5,8 @@ const csvFile = "./data/mushroom.csv";
 const trainingLabel = "class";
 const ignored = ["class", "population", "habitat", "bruises"];
 
+let decisionTree;
+
 let goodPoison = 0;
 let goodEdible = 0;
 let isPoison = 0;
@@ -15,7 +17,10 @@ function loadData() {
         download: true,
         header: true,
         dynamicTyping: true,
-        complete: (results) => trainModel(results.data),
+        complete: (results) => {
+            trainModel(results.data);
+            setupFormPrediction();
+        },
     });
 }
 
@@ -23,7 +28,7 @@ function trainModel(data) {
     const trainData = data.slice(0, Math.floor(data.length * 0.8));
     const testData = data.slice(Math.floor(data.length * 0.8) + 1);
 
-    const decisionTree = new DecisionTree({
+    decisionTree = new DecisionTree({
         ignoredAttributes: ignored,
         trainingSet: data,
         categoryAttr: trainingLabel,
@@ -31,9 +36,9 @@ function trainModel(data) {
 
     const visual = new VegaTree("#view", 800, 400, decisionTree.toJSON());
 
-    const mushroom = testData[0];
-    const mushroomPrediction = decisionTree.predict(mushroom);
-    console.log(`The paddo is: ${mushroomPrediction}`);
+    // let mushroom = testData[0];
+    // let mushroomPrediction = decisionTree.predict(mushroom);
+    // console.log(`The mushroom is: ${mushroomPrediction}`);
 
     function accuracy(data, tree, label) {
         let correct = 0;
@@ -42,8 +47,8 @@ function trainModel(data) {
                 correct++;
             }
         }
-        const element = document.getElementById("accuracy");
-        element.innerText = `Accuracy ${label}: ${correct / data.length}`;
+        const accuracy = document.getElementById("accuracy");
+        accuracy.innerText = `Accuracy ${label}: ${correct / data.length}`;
         console.log(`Accuracy ${label}: ${correct / data.length}`);
     }
 
@@ -72,5 +77,30 @@ function trainModel(data) {
     const jsonString = JSON.stringify(json);
     console.log(jsonString);
 }
+
+function setupFormPrediction() {
+    const form = document.getElementById("predictionForm");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const inputs = Array.from(form.elements);
+        const attributes = inputs
+            .filter((input) => input.tagName === "SELECT")
+            .map((input) => input.value);
+        const prediction = decisionTree.predict(attributes);
+        displayPredictionResult(prediction);
+    });
+}
+
+function displayPredictionResult(prediction) {
+    const form = document.getElementById("predictionForm");
+    const inputs = Array.from(form.elements);
+    const attributes = inputs
+        .filter((input) => input.tagName === "SELECT")
+        .map((input) => input.value);
+    const userInput = attributes.join(", ");
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = `Input: ${userInput}<br>Prediction: ${prediction}`;
+}
+
 
 loadData();
