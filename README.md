@@ -1,9 +1,7 @@
 # PRG08-herkansing
 
-Week 3
-
-Week 5 ✔
-
 Week 6 ✔
+https://wesselvbbb.github.io/PRG08-herkansing/week-6/
 
 Week 7 ✔
+https://wesselvbbb.github.io/PRG08-herkansing/week-7/week7/
